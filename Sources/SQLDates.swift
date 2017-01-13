@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func getSQLDate(_ inputdate: Date) -> String {
+public func getSQLDate(_ date: Date) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
     
