@@ -8,6 +8,20 @@
 
 import Foundation
 
+public func getDate(fromSQLDate str: String) -> Date? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    
+    return formatter.date(from: str)
+}
+
+public func getDate(fromSQLDateTime str: String) -> Date? {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+    
+    return formatter.date(from: str)
+}
+
 extension Date {
     public func sqlDate() -> String {
         let formatter = DateFormatter()
@@ -21,19 +35,5 @@ extension Date {
         formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         
         return formatter.string(from: self)
-    }
-    
-    public func getDate(fromSQLDate str: String) -> Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        
-        return formatter.date(from: str)
-    }
-    
-    public func getDate(fromSQLDateTime str: String) -> Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        
-        return formatter.date(from: str)
     }
 }
